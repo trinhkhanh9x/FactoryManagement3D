@@ -1,0 +1,13 @@
+{
+  "name": "FactoryManagement3D",
+  "display_name": "Factory Management 3D Tracking",
+  "version": "1.1.1",
+  "description": "Quản lý mặt bằng 3D nhiều nhà xưởng và theo dõi máy, lệnh, công đoạn từ MES.",
+  "author": "OpenMES Customization",
+  "provider": "Modules\\FactoryManagement3D\\Providers\\FactoryManagement3DServiceProvider",
+  "requires_core": "=0.27.0",
+  "hooks": [
+    "MenuRegistry"
+  ],
+  "requires": []
+}

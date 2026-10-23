@@ -1,0 +1,10 @@
+[
+  {
+    "tag": "v1.1.1",
+    "module_version": "1.1.1",
+    "archive": "FactoryManagement3D-1.1.1.zip",
+    "bytes": 241118,
+    "sha256": "d6370a1007210cba8f67edfd2b74241afd5a35891712ee9667d3957fd5b145cf",
+    "source": "Existing released runtime ZIP; original artifact unchanged"
+  }
+]

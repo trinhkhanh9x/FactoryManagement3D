@@ -1,0 +1,666 @@
+.fm3d-root {
+    color: var(--om-ink);
+    font-family: var(--font-sans, inherit);
+    font-size: 13px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: clamp(12px, 1.6vw, 24px);
+}
+.fm3d-root h1 {
+    font-size: 20px;
+    font-weight: 650;
+    line-height: 1.35;
+    margin: 0;
+}
+.fm3d-root h2 {
+    font-size: 15px;
+    font-weight: 650;
+    line-height: 1.4;
+    margin: 0;
+}
+.fm3d-root h3 {
+    font-size: 13px;
+    font-weight: 650;
+    margin: 6px 0;
+}
+.fm3d-root p {
+    margin: 0;
+    line-height: 1.6;
+}
+.fm3d-root button:focus-visible,
+.fm3d-root a:focus-visible,
+.fm3d-root select:focus-visible,
+.fm3d-root input:focus-visible {
+    outline: 2px solid var(--om-accent);
+    outline-offset: 3px;
+}
+.fm3d-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+}
+.fm3d-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+.fm3d-panel {
+    background: var(--om-card);
+    border: 1px solid var(--om-line);
+    border-radius: var(--om-radius);
+    padding: 18px;
+    min-width: 0;
+}
+.fm3d-muted {
+    color: var(--om-muted);
+    font-size: 11.5px;
+    line-height: 1.5;
+}
+.fm3d-mono {
+    font-family: var(--font-mono, monospace);
+}
+.fm3d-link {
+    color: var(--om-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.fm3d-grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    min-width: 0;
+}
+.fm3d-grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    min-width: 0;
+}
+.fm3d-factory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: 16px;
+}
+.fm3d-summary {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    margin: 0;
+    border: 1px solid var(--om-line);
+    border-radius: var(--om-radius-sm);
+    background: var(--om-panel);
+    min-width: 0;
+}
+.fm3d-summary > div {
+    padding: 14px;
+    border-inline-end: 1px solid var(--om-line);
+}
+.fm3d-summary > div:last-child {
+    border-inline-end: 0;
+}
+.fm3d-summary dt {
+    font-size: 10.5px;
+    color: var(--om-muted);
+}
+.fm3d-summary dd {
+    font-family: var(--font-mono, monospace);
+    font-weight: 600;
+    font-size: 22px;
+    margin: 5px 0 0;
+    font-variant-numeric: tabular-nums;
+}
+.fm3d-summary > [data-tone='running'] {
+    --fm3d-summary-tone: var(--om-running);
+}
+.fm3d-summary > [data-tone='active'] {
+    --fm3d-summary-tone: var(--om-maint);
+}
+.fm3d-summary > [data-tone='blocked'] {
+    --fm3d-summary-tone: var(--om-blocked);
+}
+.fm3d-summary > [data-tone='muted'] {
+    --fm3d-summary-tone: var(--om-muted);
+}
+.fm3d-summary > [data-tone] {
+    border-block-start: 2px solid var(--fm3d-summary-tone);
+}
+.fm3d-summary > [data-tone] dd {
+    color: var(--fm3d-summary-tone);
+}
+.fm3d-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    min-width: 0;
+}
+.fm3d-card-heading > svg,
+.fm3d-card-heading > [aria-hidden='true'] {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.fm3d-card-heading h2 {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.fm3d-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+}
+.fm3d-overview-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 12px;
+}
+.fm3d-overview-tools > :first-child {
+    flex: 1 1 280px;
+    max-width: 520px;
+    min-width: 0;
+}
+.fm3d-overview-search {
+    flex: 1 1 280px;
+    max-width: 520px;
+    min-width: 0;
+}
+.fm3d-overview-intro {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 72ch;
+}
+.fm3d-factory-grid .fm3d-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.fm3d-factory-grid .fm3d-summary > div {
+    border: 0;
+}
+.fm3d-freshness {
+    font-size: 11px;
+    color: var(--om-muted);
+}
+.fm3d-toolbar {
+    display: flex;
+    flex-direction: column;
+    background: var(--om-panel);
+    border: 1px solid var(--om-line);
+    border-radius: var(--om-radius);
+}
+.fm3d-toolbar-group {
+    padding: 14px;
+    min-width: 0;
+}
+.fm3d-toolbar-group + .fm3d-toolbar-group {
+    border-top: 1px solid var(--om-line);
+}
+.fm3d-toolbar-heading {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--om-muted);
+}
+.fm3d-toolbar-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 12px;
+    min-width: 0;
+}
+.fm3d-toolbar-controls > .fm3d-field {
+    flex: 1 1 155px;
+    max-width: 235px;
+    min-width: 0;
+}
+.fm3d-toolbar-controls > .fm3d-toolbar-search {
+    flex: 2 1 235px;
+    min-width: 0;
+}
+.fm3d-toolbar-controls > .fm3d-check {
+    align-self: center;
+}
+.fm3d-filter-results {
+    margin-top: 10px !important;
+    font-variant-numeric: tabular-nums;
+}
+.fm3d-filter-empty {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border: 1px dashed var(--om-line);
+    border-radius: var(--om-radius-sm);
+}
+.fm3d-editor-feedback {
+    display: contents;
+}
+.fm3d-draft-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--om-line);
+    background: var(--om-card);
+    border-radius: var(--om-radius);
+}
+.fm3d-draft-actions > p {
+    flex: 1 1 240px;
+    max-width: 50ch;
+}
+.fm3d-draft-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+}
+.fm3d-action-control {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1 1 140px;
+    max-width: 220px;
+}
+.fm3d-action-control > button {
+    align-self: flex-start;
+}
+.fm3d-layout-empty {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: clamp(20px, 3vw, 36px);
+    background: var(--om-panel);
+}
+.fm3d-layout-empty-icon {
+    color: var(--om-muted);
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+.fm3d-layout-empty > .fm3d-stack {
+    max-width: 70ch;
+}
+.fm3d-layout-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+    padding-inline-start: 20px;
+    gap: 14px 26px;
+}
+.fm3d-layout-steps li {
+    padding-inline-start: 3px;
+}
+.fm3d-layout-steps strong {
+    display: block;
+    margin-bottom: 4px;
+}
+.fm3d-layout-steps span {
+    color: var(--om-muted);
+    font-size: 11.5px;
+    line-height: 1.6;
+}
+.fm3d-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+.fm3d-field > span {
+    font-family: var(--font-mono, monospace);
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--om-muted);
+}
+.fm3d-field select {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    font: inherit;
+    color: var(--om-ink);
+    background: var(--om-bg);
+    border: 1px solid var(--om-line);
+    border-radius: var(--om-radius-sm);
+    padding: 10px 12px;
+    min-height: 40px;
+}
+.fm3d-check {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.fm3d-check input {
+    accent-color: var(--om-accent);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+.fm3d-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+    gap: 16px;
+    align-items: start;
+    min-width: 0;
+}
+.fm3d-viewer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+}
+.fm3d-inspector {
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+    position: sticky;
+    top: 16px;
+}
+.fm3d-editor-fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.fm3d-editor-fieldset:disabled {
+    opacity: 0.6;
+}
+.fm3d-fieldset {
+    border: 1px solid var(--om-line);
+    border-radius: var(--om-radius-sm);
+    padding: 12px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+.fm3d-fieldset legend {
+    padding: 0 5px;
+    color: var(--om-muted);
+    font-size: 11px;
+}
+.fm3d-member {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--om-line2);
+}
+.fm3d-polygon-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 8px;
+    align-items: end;
+}
+.fm3d-root details {
+    border: 1px solid var(--om-line);
+    border-radius: var(--om-radius-sm);
+    padding: 10px;
+    min-width: 0;
+}
+.fm3d-root summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 3px 0;
+}
+.fm3d-root details[open] > summary {
+    margin-bottom: 12px;
+}
+.fm3d-root .fm3d-hidden {
+    display: none;
+}
+.fm3d-description {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 10px;
+    margin: 0;
+    font-size: 11.5px;
+}
+.fm3d-description dt {
+    color: var(--om-muted);
+}
+.fm3d-description dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.fm3d-operation {
+    border: 1px solid var(--om-line2);
+    border-radius: var(--om-radius-sm);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.fm3d-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 16px;
+    padding: 10px 0;
+}
+.fm3d-machine-state {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 11.5px;
+    line-height: 1.5;
+}
+.fm3d-machine-state > span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--fm3d-state, var(--om-muted));
+    flex-shrink: 0;
+}
+.fm3d-machine-unknown > span {
+    background: transparent;
+    border: 1px dashed var(--fm3d-state, var(--om-muted));
+    border-radius: 2px;
+}
+.fm3d-station-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 205px), 1fr));
+    gap: 10px;
+    max-height: 360px;
+    overflow: auto;
+    padding: 3px;
+}
+.fm3d-station {
+    font: inherit;
+    background: var(--om-bg);
+    color: var(--om-ink);
+    text-align: start;
+    border: 1px solid var(--om-line);
+    padding: 12px;
+    border-radius: var(--om-radius-sm);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.fm3d-station:hover {
+    background: var(--om-panel);
+}
+.fm3d-station.fm3d-selected {
+    border-color: var(--om-accent);
+    background: var(--om-selected);
+}
+.fm3d-object-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+.fm3d-table-wrap {
+    overflow: auto;
+    max-width: 100%;
+}
+.fm3d-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: start;
+    font-size: 12px;
+}
+.fm3d-table th {
+    font-weight: 500;
+    color: var(--om-muted);
+    font-size: 10.5px;
+    white-space: nowrap;
+    text-align: start;
+}
+.fm3d-table th,
+.fm3d-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--om-line2);
+    vertical-align: top;
+}
+.fm3d-overdue {
+    color: var(--om-blocked);
+}
+.fm3d-empty {
+    padding: 25px 8px;
+    color: var(--om-muted);
+    line-height: 1.6;
+}
+.fm3d-scene {
+    position: relative;
+    min-height: 480px;
+    height: clamp(480px, 58vh, 760px);
+    overflow: hidden;
+    border: 1px solid var(--om-line);
+    border-radius: var(--om-radius);
+    background: var(--om-bg);
+}
+.fm3d-scene-canvas,
+.fm3d-scene-labels {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.fm3d-scene-labels {
+    pointer-events: none;
+    overflow: hidden;
+}
+.fm3d-scene-label {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    pointer-events: auto;
+    border: 1px solid var(--om-line);
+    border-radius: var(--om-radius-sm);
+    background: var(--om-panel);
+    color: var(--om-ink);
+    padding: 4px 7px;
+    font-family: var(--font-sans, inherit);
+    font-size: 10.5px;
+    max-width: 160px;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+.fm3d-scene-label-selected {
+    border-color: var(--om-accent);
+    background: var(--om-selected);
+}
+.fm3d-scene-label span {
+    display: block;
+    font-size: 9px;
+    color: var(--om-muted);
+}
+.fm3d-scene-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--om-panel);
+    padding: 22px;
+    color: var(--om-muted);
+    text-align: center;
+}
+@media (min-width: 1181px) and (min-height: 800px) {
+    .fm3d-draft-actions {
+        position: sticky;
+        top: 12px;
+        z-index: 10;
+    }
+    .fm3d-workspace-editing .fm3d-inspector {
+        top: 120px;
+        max-height: calc(100vh - 145px);
+    }
+}
+@media (max-width: 1180px) {
+    .fm3d-workspace {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .fm3d-inspector {
+        position: static;
+        max-height: none;
+    }
+    .fm3d-summary {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .fm3d-summary > div {
+        border: 0;
+    }
+    .fm3d-scene {
+        min-height: 400px;
+        height: 480px;
+    }
+}
+@media (max-width: 600px) {
+    .fm3d-grid2,
+    .fm3d-grid3 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .fm3d-panel {
+        padding: 12px;
+    }
+    .fm3d-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .fm3d-polygon-row {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+    .fm3d-polygon-row > button {
+        grid-column: 1/-1;
+    }
+    .fm3d-scene {
+        min-height: 340px;
+        height: 400px;
+    }
+    .fm3d-toolbar-controls > .fm3d-field,
+    .fm3d-toolbar-controls > .fm3d-toolbar-search {
+        flex-basis: 100%;
+        max-width: none;
+    }
+    .fm3d-layout-empty {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .fm3d-layout-steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .fm3d-draft-buttons,
+    .fm3d-action-control {
+        width: 100%;
+        max-width: none;
+    }
+}

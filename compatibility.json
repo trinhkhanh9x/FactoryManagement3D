@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "tested_core_versions": ["0.27.0"],
+  "requires_runtime": 1,
+  "requires_capabilities": {},
+  "required_classes": {
+    "App\\Services\\MenuRegistry": {"methods": ["addGroup"], "constants": []},
+    "App\\Models\\WorkOrder": {"methods": ["batches"], "constants": ["TERMINAL_STATUSES"]},
+    "App\\Models\\Batch": {"methods": ["workOrder", "steps"], "constants": []},
+    "App\\Models\\BatchStep": {"methods": ["batch"], "constants": ["STATUS_IN_PROGRESS"]},
+    "App\\Models\\Issue": {"methods": ["batchStep", "productionDowntime", "workOrder"], "constants": ["STATUS_OPEN", "STATUS_ACKNOWLEDGED"]},
+    "App\\Models\\Workstation": {"methods": ["line"], "constants": []},
+    "App\\Models\\WorkstationState": {"methods": [], "constants": []}
+  },
+  "required_schema": {
+    "system_settings": ["key", "value"],
+    "users": ["id", "tenant_id"],
+    "lines": ["id", "name", "tenant_id"],
+    "workstations": ["id", "line_id", "name", "code"],
+    "work_orders": ["id", "tenant_id", "line_id", "order_no", "status", "planned_qty", "produced_qty", "due_date", "deleted_at"],
+    "batches": ["id", "work_order_id", "status", "batch_number", "lot_number", "deleted_at"],
+    "batch_steps": ["id", "batch_id", "workstation_id", "name", "status", "passed_qty", "scrap_qty", "started_at", "completed_at", "deleted_at"],
+    "workstation_states": ["id", "workstation_id", "state", "source", "started_at", "ended_at"],
+    "issues": ["id", "title", "status", "work_order_id", "batch_step_id", "production_downtime_id"],
+    "production_downtimes": ["id", "tenant_id", "workstation_id"]
+  },
+  "adapter_version": 1
+}
